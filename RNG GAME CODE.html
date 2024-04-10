@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+    <style>
+        body {
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1><center><font color='262626'>Random Number Generator</center></h1></font color>
+    <p><center><font face="Papyrus"><font color='5A0000'>GOOD LUCK :D</center></p></font color></font face>
+    <center><font color='262626'><p id="result"></center></p>
+    <center><button id="generate-button" onclick="generateRandomNumber()" style="height: 50px; width: 200px">Generate Random Number</center></button>
+    <p><center>You rolled: <span id="click-count">0</span> times</p></center></font color>
+
+  <script>
+      const images = [
+          'image2.png',
+          'image3.png',
+          'image4.gif',
+          'image5.gif',
+          'image6.gif',
+          'image8.gif',
+          'image10.gif',
+          'image12.gif',
+          'image14.gif',
+          'image15.gif',
+          'image18.gif',
+          'image20.gif'
+      ];
+
+      function generateRandomNumber() {
+          const list1 = [2,3,4,5];
+          const list2 = [3,4,5,6];
+          const list3 = [5,6,8];
+          const list4 = [6,8,10];
+          const list5 = [8,10,12];
+          const list6 = [10,12,14];
+          const list7 = [12,14,15];
+          const list8 = [14,15,18];
+          const list9 = [15,18,20];
+
+          let num = Math.floor(Math.random() * 3) + 2;
+          if (num === 3) {
+              num = Math.floor(Math.random() * 4) + 2;
+          }
+          if (num === 4) {
+              num = list1[Math.floor(Math.random() * list1.length)];
+          }
+          if (num === 5) {
+              num = list2[Math.floor(Math.random() * list2.length)];
+          }
+          if (num === 6) {
+              num = list3[Math.floor(Math.random() * list3.length)];
+          }
+          if (num === 8) {
+              num = list4[Math.floor(Math.random() * list4.length)];
+          }
+          if (num === 10) {
+              num = list5[Math.floor(Math.random() * list5.length)];
+          }
+          if (num === 12) {
+              num = list6[Math.floor(Math.random() * list6.length)];
+          }
+          if (num === 14) {
+              num = list7[Math.floor(Math.random() * list7.length)];
+          }
+          if (num === 15) {
+              num = list8[Math.floor(Math.random() * list8.length)];
+          }
+          if (num === 18) {
+              num = list9[Math.floor(Math.random() * list9.length)];
+          }
+	  if (num === 20) {
+          
+	  document.getElementById('result').textContent = 'You win! You got a 1/20!';
+      } else {
+          document.getElementById('result').textContent = 'You get: ' + 1 + '/' + num;
+            document.getElementById('click-count').textContent = parseInt(document.getElementById('click-count').textContent) + 1;
+            document.getElementById('generate-button').disabled = true;
+	document.body.style.backgroundImage = `url(backgrounds/${images[num-2]})`;
+            setTimeout(() => {
+                document.getElementById('generate-button').disabled = false;
+            }, 1000);
+        }
+      }
+    </script>
+</body>
+</html>
