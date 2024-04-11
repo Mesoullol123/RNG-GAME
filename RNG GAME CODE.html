@@ -25,12 +25,19 @@
           'image4.gif',
           'image5.gif',
           'image6.gif',
+	  'image7.gif',
           'image8.gif',
+	  'image9.gif',
           'image10.gif',
+	  'image11.gif',
           'image12.gif',
+	  'image13.gif',
           'image14.gif',
           'image15.gif',
+	  'image16.gif',
+	  'image17.gif',
           'image18.gif',
+	  'image19.gif',
           'image20.gif'
       ];
 
@@ -79,6 +86,7 @@
 	  if (num === 20) {
           
 	  document.getElementById('result').textContent = 'You win! You got a 1/20!';
+	document.body.style.backgroundImage = `url(backgrounds/image20.gif)`;
       } else {
           document.getElementById('result').textContent = 'You get: ' + 1 + '/' + num;
             document.getElementById('click-count').textContent = parseInt(document.getElementById('click-count').textContent) + 1;
